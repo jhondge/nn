@@ -2,7 +2,6 @@ local ffi = require 'ffi'
 
 local THNN = {}
 
-
 local generic_THNN_h = require 'nn.THNN_h'
 -- strip all lines starting with #
 -- to remove preprocessor directives originally present
@@ -44,7 +43,8 @@ if not package.searchpath then
 end
 
 -- load libTHNN
-THNN.C = ffi.load(package.searchpath('libTHNN', package.cpath))
+-- package.searchpath('libTHNN', package.cpath)
+THNN.C = ffi.load('libTHNN')
 
 ffi.cdef(base_declarations)
 
