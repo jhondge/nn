@@ -30,8 +30,8 @@ void THNN_(LookupTable_accGradParameters)(
           THIntegerTensor *count,
           THTensor *sorted,
           THTensor *indices,
-          bool scaleGradByFreq,
-          int paddingValue,
+          intptr_t scaleGradByFreq,
+          intptr_t paddingValue,
           real scale)
 {
   ptrdiff_t i;

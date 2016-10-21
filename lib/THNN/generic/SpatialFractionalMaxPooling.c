@@ -28,7 +28,7 @@ static void THNN_(SpatialFractionalMaxPooling_updateOutput_frame)(
   long numPlanes,
   long inputW, long inputH,
   long outputW, long outputH,
-  int poolSizeW, int poolSizeH) {
+  intptr_t poolSizeW, intptr_t poolSizeH) {
   long plane;
 #pragma omp parallel for private(plane)
   for (plane = 0; plane < numPlanes; ++plane) {
@@ -92,8 +92,8 @@ void THNN_(SpatialFractionalMaxPooling_updateOutput)(
     THNNState *state,
     THTensor *input,
     THTensor *output,
-    int outputW, int outputH,
-    int poolSizeW, int poolSizeH,
+    intptr_t outputW, intptr_t outputH,
+    intptr_t poolSizeW, intptr_t poolSizeH,
     THTensor *indices,
     THTensor *randomSamples) {
 
@@ -193,8 +193,8 @@ void THNN_(SpatialFractionalMaxPooling_updateGradInput)(
     THTensor *input,
     THTensor *gradOutput,
     THTensor *gradInput,
-    int outputW, int outputH,
-    int poolSizeW, int poolSizeH,
+    intptr_t outputW, intptr_t outputH,
+    intptr_t poolSizeW, intptr_t poolSizeH,
     THTensor *indices) {
 
   long numBatch = 1;

@@ -9,8 +9,8 @@ void THNN_(RReLU_updateOutput)(
           THTensor *noise,
           real lower,
           real upper,
-          bool train,
-          bool inplace,
+          intptr_t train,
+          intptr_t inplace,
           THGenerator *generator)
 {
   if (train)
@@ -83,8 +83,8 @@ void THNN_(RReLU_updateGradInput)(
           THTensor *noise,
           real lower,
           real upper,
-          bool train,
-          bool inplace)
+          intptr_t train,
+          intptr_t inplace)
 {
   THNN_CHECK_NELEMENT(input, gradOutput);
   if (train && upper - lower > 1E-6)    // e.g. if upper == lower, RReLU behaves like LeakyReLU

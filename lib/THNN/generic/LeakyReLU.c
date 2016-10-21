@@ -7,7 +7,7 @@ void THNN_(LeakyReLU_updateOutput)(
           THTensor *input,
           THTensor *output,
           real negval,
-          bool inplace)
+          intptr_t inplace)
 {
   if (inplace)
   {
@@ -32,7 +32,7 @@ void THNN_(LeakyReLU_updateGradInput)(
           THTensor *gradOutput,
           THTensor *gradInput,
           real negval,
-          bool inplace)
+          intptr_t inplace)
 {
   THNN_CHECK_NELEMENT(input, gradOutput);
   if (inplace)

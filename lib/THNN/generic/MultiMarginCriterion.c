@@ -8,8 +8,8 @@ void THNN_(MultiMarginCriterion_updateOutput)(
           THTensor *input,
           THTensor *target,
           THTensor *output,
-          bool sizeAverage,
-          int p,
+          intptr_t sizeAverage,
+          intptr_t p,
           THTensor *weights,
           real margin)
 {
@@ -86,8 +86,8 @@ void THNN_(MultiMarginCriterion_updateGradInput)(
           THTensor *input,
           THTensor *target,
           THTensor *gradInput,
-          bool sizeAverage,
-          int p,
+          intptr_t sizeAverage,
+          intptr_t p,
           THTensor *weights,
           real margin)
 {

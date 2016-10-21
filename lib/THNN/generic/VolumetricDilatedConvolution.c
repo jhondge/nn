@@ -10,10 +10,10 @@ void THNN_(VolumetricDilatedConvolution_updateOutput)(
           THTensor *bias,
           THTensor *columns,
           THTensor *ones,
-          int kT, int kW, int kH,
-          int dT, int dW, int dH,
-          int padT, int padW, int padH,
-          int dilationT, int dilationW, int dilationH)
+          intptr_t kT, intptr_t kW, intptr_t kH,
+          intptr_t dT, intptr_t dW, intptr_t dH,
+          intptr_t padT, intptr_t padW, intptr_t padH,
+          intptr_t dilationT, intptr_t dilationW, intptr_t dilationH)
 {
   THNN_ARGCHECK(input->nDimension == 4 || input->nDimension == 5, 2, input,
 		"4D or 5D (batch mode) tensor expected for input, but got: %s");
@@ -144,10 +144,10 @@ void THNN_(VolumetricDilatedConvolution_updateGradInput)(
           THTensor *gradInput,
           THTensor *weight,
           THTensor *gradColumns,
-          int kT, int kW, int kH,
-          int dT, int dW, int dH,
-          int padT, int padW, int padH,
-          int dilationT, int dilationW, int dilationH)
+          intptr_t kT, intptr_t kW, intptr_t kH,
+          intptr_t dT, intptr_t dW, intptr_t dH,
+          intptr_t padT, intptr_t padW, intptr_t padH,
+          intptr_t dilationT, intptr_t dilationW, intptr_t dilationH)
 {
   THNN_ARGCHECK(input->nDimension == 4 || input->nDimension == 5, 2, input,
 		"4D or 5D (batch mode) tensor expected for input, but got: %s");
@@ -248,10 +248,10 @@ void THNN_(VolumetricDilatedConvolution_accGradParameters)(
           THTensor *gradBias,
           THTensor *columns,
           THTensor *ones,
-          int kT, int kW, int kH,
-          int dT, int dW, int dH,
-          int padT, int padW, int padH,
-          int dilationT, int dilationW, int dilationH,
+          intptr_t kT, intptr_t kW, intptr_t kH,
+          intptr_t dT, intptr_t dW, intptr_t dH,
+          intptr_t padT, intptr_t padW, intptr_t padH,
+          intptr_t dilationT, intptr_t dilationW, intptr_t dilationH,
           real scale)
 {
   THNN_ARGCHECK(input->nDimension == 4 || input->nDimension == 5, 2, input,

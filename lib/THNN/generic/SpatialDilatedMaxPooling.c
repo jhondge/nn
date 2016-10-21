@@ -4,8 +4,8 @@
 
 static inline void THNN_(SpatialDilatedMaxPooling_shapeCheck)(
 	THTensor *input, THTensor *gradOutput, THTensor *indices,
-	int kH, int kW, int dH, int dW, int padH, int padW,
-	int dilationH, int dilationW, bool ceil_mode) {
+	intptr_t kH, intptr_t kW, intptr_t dH, intptr_t dW, intptr_t padH, intptr_t padW,
+	intptr_t dilationH, intptr_t dilationW, intptr_t ceil_mode) {
 
   THArgCheck(kW > 0 && kH > 0, 5,
 	       "kernel size should be greater than zero, but got kH: %d kW: %d", kH, kW);
@@ -78,14 +78,14 @@ static void THNN_(SpatialDilatedMaxPooling_updateOutput_frame)(
           long iheight,
           long owidth,
           long oheight,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          int dilationW,
-          int dilationH
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t dilationW,
+          intptr_t dilationH
           )
 {
   long k;
@@ -146,15 +146,15 @@ void THNN_(SpatialDilatedMaxPooling_updateOutput)(
           THTensor *input,
           THTensor *output,
           THTensor *indices,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          int dilationW,
-          int dilationH,
-          bool ceil_mode)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t dilationW,
+          intptr_t dilationH,
+          intptr_t ceil_mode)
 {
 
   int dimw = 2;
@@ -271,8 +271,8 @@ static void THNN_(SpatialDilatedMaxPooling_updateGradInput_frame)(
           long inputHeight,
           long outputWidth,
           long outputHeight,
-          int dW,
-          int dH)
+          intptr_t dW,
+          intptr_t dH)
 {
   long k;
 #pragma omp parallel for private(k)
@@ -303,15 +303,15 @@ void THNN_(SpatialDilatedMaxPooling_updateGradInput)(
           THTensor *gradOutput,
           THTensor *gradInput,
           THTensor *indices,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          int dilationW,
-          int dilationH,
-          bool ceil_mode)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t dilationW,
+          intptr_t dilationH,
+          intptr_t ceil_mode)
 {
   int dimw = 2;
   int dimh = 1;

@@ -6,14 +6,14 @@ void THNN_(SpatialAveragePooling_updateOutput)(
           THNNState *state,
           THTensor *input,
           THTensor *output,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          bool ceil_mode,
-          bool count_include_pad)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t ceil_mode,
+          intptr_t count_include_pad)
 {
   real *output_data;
   real *input_data;
@@ -142,14 +142,14 @@ void THNN_(SpatialAveragePooling_updateGradInput)(
           THTensor *input,
           THTensor *gradOutput,
           THTensor *gradInput,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          bool ceil_mode,
-          bool count_include_pad)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t ceil_mode,
+          intptr_t count_include_pad)
 {
   int dimw = 2;
   int dimh = 1;

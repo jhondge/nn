@@ -8,7 +8,7 @@ void THNN_(HardTanh_updateOutput)(
           THTensor *output,
           real min_val,
           real max_val,
-          bool inplace)
+          intptr_t inplace)
 {
   if (inplace)
     THTensor_(set)(output, input);
@@ -70,7 +70,7 @@ void THNN_(HardTanh_updateGradInput)(
           THTensor *gradInput,
           real min_val,
           real max_val,
-          bool inplace)
+          intptr_t inplace)
 {
   THNN_CHECK_NELEMENT(input, gradOutput);
   if (inplace)

@@ -7,7 +7,7 @@ void THNN_(MarginCriterion_updateOutput)(
           THTensor *input,
           THTensor *target,
           THTensor *output,
-          bool sizeAverage,
+          intptr_t sizeAverage,
           real margin)
 {
   THNN_CHECK_NELEMENT(input, target);
@@ -30,7 +30,7 @@ void THNN_(MarginCriterion_updateGradInput)(
           THTensor *input,
           THTensor *target,
           THTensor *gradInput,
-          bool sizeAverage,
+          intptr_t sizeAverage,
           real margin)
 {
   THNN_CHECK_NELEMENT(input, target);  

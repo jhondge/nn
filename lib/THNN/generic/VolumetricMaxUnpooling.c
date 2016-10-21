@@ -13,12 +13,12 @@ static void THNN_(VolumetricMaxUnpooling_updateOutput_frame)(
           long oT,
           long oW,
           long oH,
-          int dT,
-          int dW,
-          int dH,
-          int pT,
-          int pW,
-          int pH)
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t pT,
+          intptr_t pW,
+          intptr_t pH)
 {
   long k;
 #pragma omp parallel for private(k)
@@ -62,15 +62,15 @@ void THNN_(VolumetricMaxUnpooling_updateOutput)(
           THTensor *input,
           THTensor *output,
           THTensor *indices,
-          int oT,
-          int oW,
-          int oH,
-          int dT,
-          int dW,
-          int dH,
-          int pT,
-          int pW,
-          int pH)
+          intptr_t oT,
+          intptr_t oW,
+          intptr_t oH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t pT,
+          intptr_t pW,
+          intptr_t pH)
 {
   int dimw = 3;
   int dimh = 2;
@@ -172,12 +172,12 @@ static void THNN_(VolumetricMaxUnpooling_updateGradInput_frame)(
           long oT,
           long oW,
           long oH,
-          int dT,
-          int dW,
-          int dH,
-          int pT,
-          int pW,
-          int pH)
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t pT,
+          intptr_t pW,
+          intptr_t pH)
 {
   long k;
 #pragma omp parallel for private(k)
@@ -222,15 +222,15 @@ void THNN_(VolumetricMaxUnpooling_updateGradInput)(
           THTensor *gradOutput,
           THTensor *gradInput,
           THTensor *indices,
-          int oT,
-          int oW,
-          int oH,
-          int dT,
-          int dW,
-          int dH,
-          int pT,
-          int pW,
-          int pH)
+          intptr_t oT,
+          intptr_t oW,
+          intptr_t oH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t pT,
+          intptr_t pW,
+          intptr_t pH)
 {
   int dimw = 3;
   int dimh = 2;

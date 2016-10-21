@@ -7,9 +7,9 @@ static void THNN_(VolumetricReplicationPadding_updateOutput_frame)(
   long nslices,
   long iwidth, long iheight, long idepth,
   long owidth, long oheight, long odepth,
-  int pleft, int pright,
-  int ptop, int pbottom,
-  int pfront, int pback)
+  intptr_t pleft, intptr_t pright,
+  intptr_t ptop, intptr_t pbottom,
+  intptr_t pfront, intptr_t pback)
 {
   int iStartX = fmax(0, -pleft);
   int iStartY = fmax(0, -ptop);
@@ -66,9 +66,9 @@ static void THNN_(VolumetricReplicationPadding_updateOutput_frame)(
 void THNN_(VolumetricReplicationPadding_updateOutput)(THNNState *state,
                                                       THTensor *input,
                                                       THTensor *output,
-                                                      int pleft, int pright,
-                                                      int ptop, int pbottom,
-                                                      int pfront, int pback)
+                                                      intptr_t pleft, intptr_t pright,
+                                                      intptr_t ptop, intptr_t pbottom,
+                                                      intptr_t pfront, intptr_t pback)
 {
   int dimw = 3;
   int dimh = 2;
@@ -160,9 +160,9 @@ static void THNN_(VolumetricReplicationPadding_updateGradInput_frame)(
   long nslices,
   long iwidth, long iheight, long idepth,
   long owidth, long oheight, long odepth,
-  int pleft, int pright,
-  int ptop, int pbottom,
-  int pfront, int pback)
+  intptr_t pleft, intptr_t pright,
+  intptr_t ptop, intptr_t pbottom,
+  intptr_t pfront, intptr_t pback)
 {
   int iStartX = fmax(0, -pleft);
   int iStartY = fmax(0, -ptop);
@@ -220,9 +220,9 @@ void THNN_(VolumetricReplicationPadding_updateGradInput)(THNNState *state,
                                                          THTensor *input,
                                                          THTensor *gradOutput,
                                                          THTensor *gradInput,
-                                                         int pleft, int pright,
-                                                         int ptop, int pbottom,
-                                                         int pfront, int pback)
+                                                         intptr_t pleft, intptr_t pright,
+                                                         intptr_t ptop, intptr_t pbottom,
+                                                         intptr_t pfront, intptr_t pback)
 {
   int dimw = 3;
   int dimh = 2;

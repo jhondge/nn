@@ -8,8 +8,8 @@ void THNN_(SpatialSubSampling_updateOutput)(
     THTensor *output,
     THTensor *weight,
     THTensor *bias,
-    int kW, int kH,
-    int dW, int dH)
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH)
 {
   
   real *weight_data = THTensor_(data)(weight);
@@ -102,8 +102,8 @@ void THNN_(SpatialSubSampling_updateGradInput)(
     THTensor *gradOutput,
     THTensor *gradInput,
     THTensor *weight,
-    int kW, int kH,
-    int dW, int dH)
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH)
 {
   
   int dimw = 2;
@@ -184,8 +184,8 @@ void THNN_(SpatialSubSampling_accGradParameters)(
     THTensor *gradOutput,
     THTensor *gradWeight,
     THTensor *gradBias,
-    int kW, int kH,
-    int dW, int dH,
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH,
     real scale)
 {
   long nbatch = 1;

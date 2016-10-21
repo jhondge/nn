@@ -5,8 +5,8 @@
 static inline void THNN_(SpatialDilatedConvolution_shapeCheck)(
 	THTensor *input, THTensor *gradOutput,
 	THTensor *weight, THTensor *bias, 
-	int kH, int kW, int dH, int dW, int padH, int padW,
-	int dilationH, int dilationW) {
+	intptr_t kH, intptr_t kW, intptr_t dH, intptr_t dW, intptr_t padH, intptr_t padW,
+	intptr_t dilationH, intptr_t dilationW) {
 
   THNN_ARGCHECK(weight->nDimension == 4, 4, weight,
 		"4D weight tensor (nOutputPlane,nInputPlane,kH,kW) expected, "
@@ -65,10 +65,10 @@ void THNN_(SpatialDilatedConvolution_updateOutput)(
     THTensor *bias,
     THTensor *columns,
     THTensor *ones,
-    int kW, int kH,
-    int dW, int dH,
-    int padW, int padH,
-    int dilationW, int dilationH)
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH,
+    intptr_t padW, intptr_t padH,
+    intptr_t dilationW, intptr_t dilationH)
 {
 
   THNN_(SpatialDilatedConvolution_shapeCheck)
@@ -183,10 +183,10 @@ void THNN_(SpatialDilatedConvolution_updateGradInput)(
     THTensor *gradInput,
     THTensor *weight,
     THTensor *gradColumns,
-    int kW, int kH,
-    int dW, int dH,
-    int padW, int padH,
-    int dilationW, int dilationH)
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH,
+    intptr_t padW, intptr_t padH,
+    intptr_t dilationW, intptr_t dilationH)
 {
   THNN_(SpatialDilatedConvolution_shapeCheck)
     (input, gradOutput, weight, NULL, kH, kW, dH, dW, padH, padW,
@@ -276,10 +276,10 @@ void THNN_(SpatialDilatedConvolution_accGradParameters)(
     THTensor *gradBias,
     THTensor *columns,
     THTensor *ones,
-    int kW, int kH,
-    int dW, int dH,
-    int padW, int padH,
-    int dilationW, int dilationH,
+    intptr_t kW, intptr_t kH,
+    intptr_t dW, intptr_t dH,
+    intptr_t padW, intptr_t padH,
+    intptr_t dilationW, intptr_t dilationH,
     real scale)
 {
   THNN_(SpatialDilatedConvolution_shapeCheck)

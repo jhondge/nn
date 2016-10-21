@@ -10,17 +10,17 @@
 void THNN_(unfolded_acc)(
           THTensor *finput,
           THTensor *input,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          int nInputPlane,
-          int inputWidth,
-          int inputHeight,
-          int outputWidth,
-          int outputHeight)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t nInputPlane,
+          intptr_t inputWidth,
+          intptr_t inputHeight,
+          intptr_t outputWidth,
+          intptr_t outputHeight)
 {
 #ifdef _WIN32
   LONG_PTR nip;
@@ -84,17 +84,17 @@ void THNN_(unfolded_acc)(
 void THNN_(unfolded_copy)(
           THTensor *finput,
           THTensor *input,
-          int kW,
-          int kH,
-          int dW,
-          int dH,
-          int padW,
-          int padH,
-          int nInputPlane,
-          int inputWidth,
-          int inputHeight,
-          int outputWidth,
-          int outputHeight)
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dW,
+          intptr_t dH,
+          intptr_t padW,
+          intptr_t padH,
+          intptr_t nInputPlane,
+          intptr_t inputWidth,
+          intptr_t inputHeight,
+          intptr_t outputWidth,
+          intptr_t outputHeight)
 {
   long k;
   real *input_data = THTensor_(data)(input);

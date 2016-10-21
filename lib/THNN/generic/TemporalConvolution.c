@@ -8,10 +8,10 @@ void THNN_(TemporalConvolution_updateOutput)(
           THTensor *output,
           THTensor *weight,
           THTensor *bias,
-          int kW,
-          int dW,
-          int inputFrameSize,
-          int outputFrameSize)
+          intptr_t kW,
+          intptr_t dW,
+          intptr_t inputFrameSize,
+          intptr_t outputFrameSize)
 {
   THTensor *outputWindow, *inputWindow;
   int nInputFrame, nOutputFrame;
@@ -141,8 +141,8 @@ void THNN_(TemporalConvolution_updateGradInput)(
           THTensor *gradOutput,
           THTensor *gradInput,
           THTensor *weight,
-          int kW,
-          int dW)
+          intptr_t kW,
+          intptr_t dW)
 {
   long nInputFrame;
   long nOutputFrame;
@@ -240,8 +240,8 @@ void THNN_(TemporalConvolution_accGradParameters)(
           THTensor *gradOutput,
           THTensor *gradWeight,
           THTensor *gradBias,
-          int kW,
-          int dW,
+          intptr_t kW,
+          intptr_t dW,
           real scale)
 {
   long nInputFrame;

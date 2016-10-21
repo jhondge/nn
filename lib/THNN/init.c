@@ -1,4 +1,13 @@
 #include "TH.h"
+
+#include "luaT.h"
+
+#ifndef TH_INDEX_BASE
+#define TH_INDEX_BASE 1
+#endif
+
+#include <stddef.h>
+
 #include "THNN.h"
 
 #define torch_(NAME) TH_CONCAT_3(torch_, Real, NAME)

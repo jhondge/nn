@@ -3,12 +3,12 @@
 #else
 
 static void THNN_(vol2col)(
-  const real *data_vol, const int channels,
-  const int depth, const int height, const int width,
-  const int kT, const int kH, const int kW,
-  const int pT, const int pH, const int pW,
-  const int dT, const int dH, const int dW,
-  const int dilationT, const int dilationH, const int dilationW,
+  const real *data_vol, const intptr_t channels,
+  const intptr_t depth, const intptr_t height, const intptr_t width,
+  const intptr_t kT, const intptr_t kH, const intptr_t kW,
+  const intptr_t pT, const intptr_t pH, const intptr_t pW,
+  const intptr_t dT, const intptr_t dH, const intptr_t dW,
+  const intptr_t dilationT, const intptr_t dilationH, const intptr_t dilationW,
   real *data_col)
 {
   int c, t, h, w;
@@ -45,12 +45,12 @@ static void THNN_(vol2col)(
 }
 
 static void THNN_(col2vol)(
-  const real* data_col, const int channels,
-  const int depth, const int height, const int width,
-  const int kT, const int kH, const int kW,
-  const int pT, const int pH, const int pW,
-  const int dT, const int dH, const int dW,
-  const int dilationT, const int dilationH, const int dilationW,
+  const real* data_col, const intptr_t channels,
+  const intptr_t depth, const intptr_t height, const intptr_t width,
+  const intptr_t kT, const intptr_t kH, const intptr_t kW,
+  const intptr_t pT, const intptr_t pH, const intptr_t pW,
+  const intptr_t dT, const intptr_t dH, const intptr_t dW,
+  const intptr_t dilationT, const intptr_t dilationH, const intptr_t dilationW,
   real* data_vol)
 {
   int c, t, h, w;
@@ -93,9 +93,9 @@ void THNN_(VolumetricFullConvolution_updateOutput)(
   THTensor *bias,
   THTensor *finput,         // internal columns buffer
   THTensor *fgradInput,     // internal ones buffer
-  int dT, int dW, int dH,   // stride of the convolution
-  int pT, int pW, int pH,   // padding
-  int aT, int aW, int aH)   // extra output adjustment
+  intptr_t dT, intptr_t dW, intptr_t dH,   // stride of the convolution
+  intptr_t pT, intptr_t pW, intptr_t pH,   // padding
+  intptr_t aT, intptr_t aW, intptr_t aH)   // extra output adjustment
 {
   THTensor *columns = finput;
   THTensor *ones    = fgradInput;
@@ -233,9 +233,9 @@ void THNN_(VolumetricFullConvolution_updateGradInput)(
   THTensor *weight,
   THTensor *finput,
   THTensor *fgradInput,     // only used by cuda impl
-  int dT, int dW, int dH,   // stride
-  int pT, int pW, int pH,   // padding
-  int aT, int aW, int aH)   // extra output adjustment
+  intptr_t dT, intptr_t dW, intptr_t dH,   // stride
+  intptr_t pT, intptr_t pW, intptr_t pH,   // padding
+  intptr_t aT, intptr_t aW, intptr_t aH)   // extra output adjustment
 {
   THTensor *gradColumns = finput;
 
@@ -341,9 +341,9 @@ void THNN_(VolumetricFullConvolution_accGradParameters)(
   THTensor *gradBias,
   THTensor *finput,
   THTensor *fgradInput,
-  int dT, int dW, int dH,   // stride
-  int pT, int pW, int pH,   // padding
-  int aT, int aW, int aH,   // extra output adjustment
+  intptr_t dT, intptr_t dW, intptr_t dH,   // stride
+  intptr_t pT, intptr_t pW, intptr_t pH,   // padding
+  intptr_t aT, intptr_t aW, intptr_t aH,   // extra output adjustment
   real scale)
 {
   // number of input & output planes and kernel size is indirectly defined by the gradWeight tensor

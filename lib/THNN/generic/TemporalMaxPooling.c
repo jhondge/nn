@@ -7,8 +7,8 @@ void THNN_(TemporalMaxPooling_updateOutput)(
           THTensor *input,
           THTensor *output,
           THTensor *indices,
-          int kW,
-          int dW)
+          intptr_t kW,
+          intptr_t dW)
 {
   long niframe;
   long framesize;
@@ -146,8 +146,8 @@ void THNN_(TemporalMaxPooling_updateGradInput)(
           THTensor *gradOutput,
           THTensor *gradInput,
           THTensor *indices,
-          int kW,
-          int dW)
+          intptr_t kW,
+          intptr_t dW)
 {
   long niframe;
   int noframe;

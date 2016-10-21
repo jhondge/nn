@@ -12,12 +12,12 @@ static void THNN_(VolumetricAveragePooling_updateOutput_frame)(
           long otime,
           long owidth,
           long oheight,
-          int kT,
-          int kW,
-          int kH,
-          int dT,
-          int dW,
-          int dH)
+          intptr_t kT,
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH)
 {
   long k;
 #pragma omp parallel for private(k)
@@ -64,12 +64,12 @@ void THNN_(VolumetricAveragePooling_updateOutput)(
           THNNState *state,
           THTensor *input,
           THTensor *output,
-          int kT,
-          int kW,
-          int kH,
-          int dT,
-          int dW,
-          int dH)
+          intptr_t kT,
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH)
 {
   long nslices;
   long itime;
@@ -173,12 +173,12 @@ static void THNN_(VolumetricAveragePooling_updateGradInput_frame)(
           long otime,
           long owidth,
           long oheight,
-          int kT,
-          int kW,
-          int kH,
-          int dT,
-          int dW,
-          int dH)
+          intptr_t kT,
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH)
 {
   long k;
 #pragma omp parallel for private(k)
@@ -222,12 +222,12 @@ void THNN_(VolumetricAveragePooling_updateGradInput)(
           THTensor *input,
           THTensor *gradOutput,
           THTensor *gradInput,
-          int kT,
-          int kW,
-          int kH,
-          int dT,
-          int dW,
-          int dH)
+          intptr_t kT,
+          intptr_t kW,
+          intptr_t kH,
+          intptr_t dT,
+          intptr_t dW,
+          intptr_t dH)
 {
   int nslices;
   int itime;

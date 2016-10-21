@@ -36,7 +36,7 @@ void THNN_(SpatialMaxUnpooling_updateOutput)(
     THTensor *input,
     THTensor *output,
     THTensor *indices,
-    int owidth, int oheight)
+    intptr_t owidth, intptr_t oheight)
 {
   int dimw = 2;
   int dimh = 1;
@@ -147,7 +147,7 @@ void THNN_(SpatialMaxUnpooling_updateGradInput)(
     THTensor *gradOutput,
     THTensor *gradInput,
     THTensor *indices,
-    int owidth, int oheight)
+    intptr_t owidth, intptr_t oheight)
 {
   int dimw = 2;
   int dimh = 1;

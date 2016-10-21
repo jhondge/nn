@@ -8,7 +8,7 @@ void THNN_(Threshold_updateOutput)(
           THTensor *output,
           real threshold,
           real val,
-          bool inplace)
+          intptr_t inplace)
 {
   if (inplace)
   {
@@ -34,7 +34,7 @@ void THNN_(Threshold_updateGradInput)(
           THTensor *gradInput,
           real threshold,
           real val,
-          bool inplace)
+          intptr_t inplace)
 {
   THNN_CHECK_NELEMENT(input, gradOutput);
   if (inplace)
